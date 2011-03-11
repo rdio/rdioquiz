@@ -1,0 +1,73 @@
+<html>
+<head>
+  <title>Rdio Music Quiz</title>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+  <script type="text/javascript" src="/static/rdioquiz.js"></script>
+  <script>
+    // data from the server
+    var albums = {{ albums_json }};
+    var api_swf = "{{api_swf}}";
+    var playbackToken = "{{playbackToken}}";
+    var domain = "{{domain}}";
+  </script>
+
+  <!--<link href='http://fonts.googleapis.com/css?family=Puritan' rel='stylesheet' type='text/css'>-->
+  <link rel="stylesheet" href="/static/rdioquiz.css">
+</head>
+<body>
+  <div id="header">
+    <h1 id="logo">Guess The Artist</h1>
+    <p><a id="poweredby" href="http://www.rdio.com/">Powered by Rdio</a></p>
+  </div>
+
+  <div id="content" class="wide">
+    <div class="section" id="contentheader">
+      <h2 id="source">{{source}}</h2>
+      <div id="score_container">Score <span class="counter" id="score">0</span></div>
+    </div>
+    <div class="section" id="instructions">
+      <p><strong>Here&rsquo;s how it works:</strong> when the song starts playing, click the right album to guess the artist. The faster you guess, the more points you get!</p>
+    </div>
+    <div class="section" id="options">
+      <ul class="albums">
+        <li>
+          <div class="clickable">
+            <div class="overlay"></div>
+            <img class="art" src="">
+            <span class="artistname"></span>
+          </div>
+          <p class="listen"><a href="" target="_blank">Listen on Rdio</a></p>
+        </li>
+        <li>
+          <div class="clickable">
+            <div class="overlay"></div>
+            <img class="art" src="">
+            <span class="artistname"></span>
+          </div>
+          <p class="listen"><a href="" target="_blank">Listen on Rdio</a></p>
+        </li>
+        <li>
+          <div class="clickable">
+            <div class="overlay"></div>
+            <img class="art" src="">
+            <span class="artistname"></span>
+          </div>
+          <p class="listen"><a href="" target="_blank">Listen on Rdio</a></p>
+        </li>
+      </ul>
+    </div>
+    <div class="section" id="contentfooter">
+      <button class="button win" id="start"></button>
+      <div id="loading"></div>
+      <div id="points_container">Answer to win <span class="counter" id="points"></span> points this round</div>
+    </div>
+  </div>
+  <div id="footer">
+    <p>Copyright &copy; 2011 Rdio, Inc.</p>
+    <p>You can build cool stuff too using the <a href="http://developer.rdio.com/">Rdio API</a>.</p>
+  </div>
+  <div id="api_swf"></div>
+</body>
+</html>

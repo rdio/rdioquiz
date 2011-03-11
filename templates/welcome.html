@@ -1,0 +1,40 @@
+<html>
+<head>
+  <title>Rdio Music Quiz</title>
+  <!--<link href='http://fonts.googleapis.com/css?family=Puritan' rel='stylesheet' type='text/css'>-->
+  <link rel="stylesheet" href="/static/rdioquiz.css">
+</head>
+<body>
+  <div id="header">
+    <h1 id="logo">Guess The Artist</h1>
+    <p><a id="poweredby" href="http://www.rdio.com/">Powered by Rdio</a></p>
+  </div>
+  <div id="content">
+    {% if signed_in %}
+      <div class="section">
+        <p>Play using songs from&hellip;</p>
+        <ul class="buttonlist">
+          <li><a class="button" href="/user">Your Top Albums</a></li>
+          <li><a class="button" href="/friends">Your Friends&rsquo; Top Albums</a></li>
+          <li><a class="button" href="/everyone">Top Albums on Rdio</a></li>
+        </ul>
+      </div>
+      <div class="section" id="signout">
+        <p><a href="/signout">Sign out of your Rdio Account</a>
+      </div>
+    {% else %}
+      <div class="section">
+        <a class="button default" href="/signin">Connect to Rdio</a>
+      </div>
+      <div class="section">
+        <p>Play using songs from&hellip;</p>
+        <a class="button" href="/everyone">Top Albums on Rdio</a>
+      </div>
+    {% endif %}
+  </div>
+  <div id="footer">
+    <p>Copyright &copy; 2011 Rdio, Inc.</p>
+    <p>You can build cool stuff too using the <a href="http://developer.rdio.com/">Rdio API</a>.</p>
+  </div>
+</body>
+</html>
